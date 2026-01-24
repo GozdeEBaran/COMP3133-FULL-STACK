@@ -1,0 +1,32 @@
+const fs = require("fs");
+const path = require("path");
+
+// Define the file path
+const filePath = path.join(__dirname, "output_stream.txt");
+const writeStream = fs.createWriteStream(filePath);
+
+const dataChunks = [
+  "This is the first chunk of data.\n",
+  "Here is the second chunk of data.\n",
+  "Finally, this is the third chunk of data.\n",
+];
+
+writeStream.write("Starting to write data to the file:\n");
+
+dataChunks.forEach((chunk, index) => {
+  writeStream.write(chunk, (err) => {
+    if (err) {
+      return console.error("Error writing chunk:", err);
+    }
+    console.log(`Successfully wrote chunk ${index + 1}`);
+  });
+});
+
+writeStream.end(() => {
+  console.log("All data has been written to the file.");
+});
+
+writeStream.on("error", (err) => {
+  console.error("Error with the write stream:", err);
+});
+

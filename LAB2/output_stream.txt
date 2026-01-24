@@ -1,0 +1,4 @@
+Starting to write data to the file:
+This is the first chunk of data.
+Here is the second chunk of data.
+Finally, this is the third chunk of data.
