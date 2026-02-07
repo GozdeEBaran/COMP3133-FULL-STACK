@@ -1,0 +1,26 @@
+{
+  "name": "Lab3-restaurant_database",
+  "version": "1.0.0",
+  "description": "COMP 3133 - Full Stack Development II - Lab 03 - MongoDB & Mongoose - Restaurant Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "mongoose",
+    "mongodb",
+    "express",
+    "REST",
+    "API"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "info": {
+    "name": "Lab3 Restaurant Database API",
+    "description": "COMP 3133 - Lab 03 - MongoDB & Mongoose - Restaurant API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root - API Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        },
+        "description": "Get API welcome message and available endpoints"
+      }
+    },
+    {
+      "name": "4. Get All Restaurants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants"]
+        },
+        "description": "Lab Requirement #4: Get all restaurants with all columns"
+      }
+    },
+    {
+      "name": "5. Get Restaurants - Japanese Cuisine",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants/cuisine/Japanese",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants", "cuisine", "Japanese"]
+        },
+        "description": "Lab Requirement #5: Get restaurants by cuisine - Japanese"
+      }
+    },
+    {
+      "name": "5. Get Restaurants - Bakery Cuisine",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants/cuisine/Bakery",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants", "cuisine", "Bakery"]
+        },
+        "description": "Lab Requirement #5: Get restaurants by cuisine - Bakery"
+      }
+    },
+    {
+      "name": "5. Get Restaurants - Italian Cuisine",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants/cuisine/Italian",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants", "cuisine", "Italian"]
+        },
+        "description": "Lab Requirement #5: Get restaurants by cuisine - Italian"
+      }
+    },
+    {
+      "name": "6. Get Restaurants - Sort ASC",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants?sortBy=ASC",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "ASC"
+            }
+          ]
+        },
+        "description": "Lab Requirement #6: Get restaurants sorted by restaurant_id in Ascending order. Returns: _id, cuisines, name, city, restaurant_id"
+      }
+    },
+    {
+      "name": "6. Get Restaurants - Sort DESC",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants?sortBy=DESC",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants"],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "DESC"
+            }
+          ]
+        },
+        "description": "Lab Requirement #6: Get restaurants sorted by restaurant_id in Descending order. Returns: _id, cuisines, name, city, restaurant_id"
+      }
+    },
+    {
+      "name": "7. Get Delicatessen (Excluding Brooklyn)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurants/Delicatessen",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurants", "Delicatessen"]
+        },
+        "description": "Lab Requirement #7: Get Delicatessen restaurants where city != Brooklyn. Returns: cuisines, name, city (no _id). Sorted by name ASC."
+      }
+    },
+    {
+      "name": "Create Restaurant - Japanese",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restaurant_id\": \"30075445\",\n  \"name\": \"Sushi Express\",\n  \"cuisines\": \"Japanese\",\n  \"city\": \"Manhattan\",\n  \"borough\": \"Manhattan\",\n  \"address\": {\n    \"building\": \"123\",\n    \"street\": \"Broadway\",\n    \"zipcode\": \"10001\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/restaurant",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant"]
+        },
+        "description": "Create a new Japanese restaurant"
+      }
+    },
+    {
+      "name": "Create Restaurant - Bakery",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restaurant_id\": \"50075447\",\n  \"name\": \"Sweet Delights Bakery\",\n  \"cuisines\": \"Bakery\",\n  \"city\": \"Brooklyn\",\n  \"borough\": \"Brooklyn\",\n  \"address\": {\n    \"building\": \"789\",\n    \"street\": \"Atlantic Ave\",\n    \"zipcode\": \"11217\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/restaurant",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant"]
+        },
+        "description": "Create a new Bakery restaurant"
+      }
+    },
+    {
+      "name": "Create Restaurant - Italian",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restaurant_id\": \"60075448\",\n  \"name\": \"Italian Corner\",\n  \"cuisines\": \"Italian\",\n  \"city\": \"Bronx\",\n  \"borough\": \"Bronx\",\n  \"address\": {\n    \"building\": \"321\",\n    \"street\": \"Arthur Ave\",\n    \"zipcode\": \"10458\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/restaurant",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant"]
+        },
+        "description": "Create a new Italian restaurant"
+      }
+    },
+    {
+      "name": "Create Restaurant - Delicatessen (Manhattan)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restaurant_id\": \"10075450\",\n  \"name\": \"Manhattan Delicatessen\",\n  \"cuisines\": \"Delicatessen\",\n  \"city\": \"Manhattan\",\n  \"borough\": \"Manhattan\",\n  \"address\": {\n    \"building\": \"777\",\n    \"street\": \"7th Ave\",\n    \"zipcode\": \"10019\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/restaurant",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant"]
+        },
+        "description": "Create Delicatessen in Manhattan (should appear in endpoint #7)"
+      }
+    },
+    {
+      "name": "Create Restaurant - Delicatessen (Brooklyn)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restaurant_id\": \"80075452\",\n  \"name\": \"Brooklyn Delicatessen\",\n  \"cuisines\": \"Delicatessen\",\n  \"city\": \"Brooklyn\",\n  \"borough\": \"Brooklyn\",\n  \"address\": {\n    \"building\": \"999\",\n    \"street\": \"Flatbush Ave\",\n    \"zipcode\": \"11226\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/restaurant",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant"]
+        },
+        "description": "Create Delicatessen in Brooklyn (should NOT appear in endpoint #7)"
+      }
+    },
+    {
+      "name": "Update Restaurant by ID",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Restaurant Name\",\n  \"cuisines\": \"Italian\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/restaurant/REPLACE_WITH_ACTUAL_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant", "REPLACE_WITH_ACTUAL_ID"]
+        },
+        "description": "Update restaurant by MongoDB _id. Replace REPLACE_WITH_ACTUAL_ID with actual restaurant _id from GET request."
+      }
+    },
+    {
+      "name": "Delete Restaurant by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/restaurant/REPLACE_WITH_ACTUAL_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["restaurant", "REPLACE_WITH_ACTUAL_ID"]
+        },
+        "description": "Delete restaurant by MongoDB _id. Replace REPLACE_WITH_ACTUAL_ID with actual restaurant _id from GET request."
+      }
+    }
+  ]
+}

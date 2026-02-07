@@ -1,0 +1,122 @@
+[
+  {
+    "restaurant_id": "30075445",
+    "name": "Sushi Express",
+    "cuisines": "Japanese",
+    "city": "Manhattan",
+    "borough": "Manhattan",
+    "address": {
+      "building": "123",
+      "street": "Broadway",
+      "zipcode": "10001"
+    }
+  },
+  {
+    "restaurant_id": "40075446",
+    "name": "Sakura Restaurant",
+    "cuisines": "Japanese",
+    "city": "Queens",
+    "borough": "Queens",
+    "address": {
+      "building": "456",
+      "street": "Main St",
+      "zipcode": "11354"
+    }
+  },
+  {
+    "restaurant_id": "50075447",
+    "name": "Sweet Delights Bakery",
+    "cuisines": "Bakery",
+    "city": "Brooklyn",
+    "borough": "Brooklyn",
+    "address": {
+      "building": "789",
+      "street": "Atlantic Ave",
+      "zipcode": "11217"
+    }
+  },
+  {
+    "restaurant_id": "60075448",
+    "name": "Italian Corner",
+    "cuisines": "Italian",
+    "city": "Bronx",
+    "borough": "Bronx",
+    "address": {
+      "building": "321",
+      "street": "Arthur Ave",
+      "zipcode": "10458"
+    }
+  },
+  {
+    "restaurant_id": "70075449",
+    "name": "Bella Italia",
+    "cuisines": "Italian",
+    "city": "Manhattan",
+    "borough": "Manhattan",
+    "address": {
+      "building": "555",
+      "street": "Mulberry St",
+      "zipcode": "10013"
+    }
+  },
+  {
+    "restaurant_id": "10075450",
+    "name": "Manhattan Delicatessen",
+    "cuisines": "Delicatessen",
+    "city": "Manhattan",
+    "borough": "Manhattan",
+    "address": {
+      "building": "777",
+      "street": "7th Ave",
+      "zipcode": "10019"
+    }
+  },
+  {
+    "restaurant_id": "20075451",
+    "name": "Queens Deli",
+    "cuisines": "Delicatessen",
+    "city": "Queens",
+    "borough": "Queens",
+    "address": {
+      "building": "888",
+      "street": "Queens Blvd",
+      "zipcode": "11374"
+    }
+  },
+  {
+    "restaurant_id": "80075452",
+    "name": "Brooklyn Delicatessen",
+    "cuisines": "Delicatessen",
+    "city": "Brooklyn",
+    "borough": "Brooklyn",
+    "address": {
+      "building": "999",
+      "street": "Flatbush Ave",
+      "zipcode": "11226"
+    }
+  },
+  {
+    "restaurant_id": "90075453",
+    "name": "Bronx Bakery House",
+    "cuisines": "Bakery",
+    "city": "Bronx",
+    "borough": "Bronx",
+    "address": {
+      "building": "111",
+      "street": "Grand Concourse",
+      "zipcode": "10451"
+    }
+  },
+  {
+    "restaurant_id": "15075454",
+    "name": "Staten Island Deli",
+    "cuisines": "Delicatessen",
+    "city": "Staten Island",
+    "borough": "Staten Island",
+    "address": {
+      "building": "222",
+      "street": "Victory Blvd",
+      "zipcode": "10301"
+    }
+  }
+]
