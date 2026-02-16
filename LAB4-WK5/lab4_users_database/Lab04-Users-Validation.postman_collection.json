@@ -1,0 +1,279 @@
+{
+  "info": {
+    "name": "Lab04 - Users Database Validation",
+    "description": "COMP 3133 - Lab 04 - Mongoose Validation Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "API Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": [""]
+        },
+        "description": "Get API information and validation rules"
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Retrieve all users from database"
+      }
+    },
+    {
+      "name": "Test 1: Valid User ✅",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Leanne Graham\",\n  \"username\": \"Bret\",\n  \"email\": \"Sincere@april.biz\",\n  \"address\": {\n    \"street\": \"Kulas Light\",\n    \"suite\": \"Apt. 556\",\n    \"city\": \"Gwenborough\",\n    \"zipcode\": \"92998-3874\",\n    \"geo\": {\n      \"lat\": \"-37.3159\",\n      \"lng\": \"81.1496\"\n    }\n  },\n  \"phone\": \"1-770-736-8031\",\n  \"website\": \"http://hildegard.org\",\n  \"company\": {\n    \"name\": \"Romaguera-Crona\",\n    \"catchPhrase\": \"Multi-layered client-server neural-net\",\n    \"bs\": \"harness real-time e-markets\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Create a valid user - should pass all validation"
+      }
+    },
+    {
+      "name": "Test 2: Username Too Short ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"Tom\",\n  \"email\": \"test1@example.com\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto\",\n    \"zipcode\": \"12345-1234\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"1-416-555-1234\",\n  \"website\": \"http://example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Username 'Tom' is only 3 characters (minimum is 4)"
+      }
+    },
+    {
+      "name": "Test 3: Invalid Email Format ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"TestUser\",\n  \"email\": \"invalid-email\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto\",\n    \"zipcode\": \"12345-1234\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"1-416-555-1234\",\n  \"website\": \"http://example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Email 'invalid-email' is not a valid email format"
+      }
+    },
+    {
+      "name": "Test 4: City with Numbers ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"TestUser\",\n  \"email\": \"test2@example.com\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto123\",\n    \"zipcode\": \"12345-1234\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"1-416-555-1234\",\n  \"website\": \"http://example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "City 'Toronto123' contains numbers (only alphabets and spaces allowed)"
+      }
+    },
+    {
+      "name": "Test 5: Invalid Zipcode Format ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"TestUser\",\n  \"email\": \"test3@example.com\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto\",\n    \"zipcode\": \"12345\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"1-416-555-1234\",\n  \"website\": \"http://example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Zipcode '12345' doesn't match format DDDDD-DDDD"
+      }
+    },
+    {
+      "name": "Test 6: Invalid Phone Format ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"TestUser\",\n  \"email\": \"test4@example.com\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto\",\n    \"zipcode\": \"12345-1234\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"416-555-1234\",\n  \"website\": \"http://example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Phone '416-555-1234' doesn't match format D-DDD-DDD-DDDD"
+      }
+    },
+    {
+      "name": "Test 7: Invalid Website - Missing Protocol ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"TestUser\",\n  \"email\": \"test5@example.com\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto\",\n    \"zipcode\": \"12345-1234\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"1-416-555-1234\",\n  \"website\": \"www.example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Website 'www.example.com' missing http:// or https://"
+      }
+    },
+    {
+      "name": "Test 8: Missing Required Fields ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"TestUser\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Multiple required fields are missing"
+      }
+    },
+    {
+      "name": "Test 9: Duplicate Email ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Another User\",\n  \"username\": \"AnotherUser\",\n  \"email\": \"Sincere@april.biz\",\n  \"address\": {\n    \"street\": \"Different Street\",\n    \"suite\": \"Suite 200\",\n    \"city\": \"Montreal\",\n    \"zipcode\": \"54321-4321\",\n    \"geo\": {\n      \"lat\": \"45.0\",\n      \"lng\": \"-73.0\"\n    }\n  },\n  \"phone\": \"1-514-555-1234\",\n  \"website\": \"https://another.com\",\n  \"company\": {\n    \"name\": \"Another Company\",\n    \"catchPhrase\": \"Another catchphrase\",\n    \"bs\": \"another business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Try to create user with email that already exists. Run Test 1 first!"
+      }
+    },
+    {
+      "name": "Test 10: Username Too Long ❌",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"username\": \"ThisIsAReallyLongUsernameThatExceedsTheMaximumAllowedLengthOfOneHundredCharactersAndShouldFailValidation\",\n  \"email\": \"long@example.com\",\n  \"address\": {\n    \"street\": \"Main Street\",\n    \"suite\": \"Suite 100\",\n    \"city\": \"Toronto\",\n    \"zipcode\": \"12345-1234\",\n    \"geo\": {\n      \"lat\": \"43.0\",\n      \"lng\": \"-79.0\"\n    }\n  },\n  \"phone\": \"1-416-555-1234\",\n  \"website\": \"http://example.com\",\n  \"company\": {\n    \"name\": \"Test Company\",\n    \"catchPhrase\": \"Testing\",\n    \"bs\": \"test business\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["users"]
+        },
+        "description": "Username exceeds 100 characters maximum"
+      }
+    }
+  ]
+}

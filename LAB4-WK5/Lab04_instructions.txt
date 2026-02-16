@@ -1,0 +1,46 @@
+COMP 3133 – Full Stack Development II
+Lab 04 – Mongoose Validation
+
+Create NodeJS + Express + MongoDB + mongoose application to perform following operations
+Note:
+	•	Create GitHub repository and commit all your code to GitHub
+	•	Use Postman to insert test the records
+	•	Download and use given UserData.json to insert data and to define schema
+
+NodeJS Project 
+	•	Create NodeJS project having name lab4_users_database 
+	•	Install required modules to work with express and mongoose
+
+	•	Create Users Schema in your project to declare validation 
+
+	•	All fields are mandatory
+	•	Username field must have min length >=4 and max length 100
+	•	Allow only unique and valid email address 
+	•	Allow only alphabets and space while entering city name
+	•	Allow only valid web URL address (http or https is valid)
+	•	Zip code format must be like 12345-1234 (DDDDD-DDDD, D = digit)
+	•	Validate phone format like 1-123-123-1234 (D-DDD-DDD-DDD, D = digit)
+
+	•	Create POST REST API to insert document to MongoDB database and perform validation
+
+http://localhost:8081/users 
+
+MongoDB Atlas
+
+https://account.mongodb.com/account/login
+
+Use MongoDB Atlas for creating collections named users 
+
+
+Reference
+	•	Lab work done during class
+	•	https://mongoosejs.com/docs/guide.html
+	•	https://mongoosejs.com/docs/validation.html 
+	•	https://techeplanet.com/express-send-json-response/
+
+Submission
+	•	Screenshot(s) (Postman) with appropriate title showing your REST API each validation error output. You may add all the screenshots in word document and upload it. [Do not put screenshots in project/zip file].	
+	•	Delete the node_modules folder as it has many files which are big in size and is not required for the submission. Create a zip file of your entire project folder and submit.
+	•	Your GitHub project link.
+
+
