@@ -1,0 +1,15 @@
+{
+  "name": "lab06_101515982",
+  "version": "1.0.0",
+  "description": "**Student Name:** Gozde Baran   **Student ID:** 101515982",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
